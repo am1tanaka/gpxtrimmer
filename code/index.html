@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GPX Trimmer</title>
+<!-- 
+	<script type="text/javascript" src="../plugins/jquery.min.js"></script>
+	<script type="text/javascript" src="gpxtrim.js"></script>
+    <script type="text/javascript">
+    $(function() {
+    	// 起動
+    	am1.gpxtrim.boot();
+    });
+    </script>
+ -->
+</head>
+<body>
+<h1>GPXファイルの整理ツール</h1>
+<form action='./gpxtrim.php' method='post' name='form_block' id='form_block' enctype='multipart/form-data'>
+<input type='hidden' name='MAX_FILE_SIZE' value='1000000' />
+<div id='file_block'>
+<p>GPX File:<input type='file' id='gpxfile' name='gpxfile' />
+</p>
+</div>
+
+<div id='tool_block'>
+<p><input type='radio' id='convtype' name='convtype' value='rm_aida' checked>同じ場所は、最初と最後を残して間を削除</input>
+</p>
+<p><input type='radio' id='convtype' name='convtype' value='rm_ushiro'>同じ場所は、最初だけ残してあとは削除(i-GotUなど)</input>
+</p>
+<hr style='color:#eee' />
+<p>
+<input type='checkbox' id='chgtime' name='chgtime' >時間を修正する</input>
+<input type='textbox' id='txttime' name='txttime' value='9' />
+</p>
+</div>
+<input type='submit' name='fileselect' id='fileselect' value='変換実行' />
+
+<input type='hidden' id="gpx_cmd"></input>
+
+</form>
+
+<hr />
+<p class='copyright'>2014 YuTanaka@AmuseOne</p>
+</body>
+</html>
